@@ -68,7 +68,7 @@
         }
         
         // API Base URL
-        const API_BASE = 'https://portfolio-backend-8xqk.onrender.com/';
+        const API_BASE = 'https://portfolio-backend-8xqk.onrender.com/api';
     </script>
 </head>
 
@@ -321,11 +321,11 @@
                     document.getElementById('hero-name').textContent = data.hero.name || 'Dallah';
                     document.getElementById('hero-description').textContent = data.hero.description || 'A passionate web developer and graphic designer...';
                     if (data.hero.profileImage) {
-                        document.getElementById('profile-image').src = API_BASE + data.hero.profileImage;
+                        document.getElementById('profile-image').src = 'https://portfolio-backend-8xqk.onrender.com' + data.hero.profileImage;
                     }
                     if (data.hero.resume) {
                         document.getElementById('download-resume').addEventListener('click', () => {
-                            window.open(API_BASE + data.hero.resume, '_blank');
+                            window.open('https://portfolio-backend-8xqk.onrender.com' + data.hero.resume, '_blank');
                         });
                     }
                 }
@@ -393,7 +393,7 @@
                                     <div class="swiper-wrapper">
                                         ${project.images.map(img => `
                                             <div class="swiper-slide">
-                                                <img src="${API_BASE}${img}" 
+                                                <img src="https://portfolio-backend-8xqk.onrender.com${img}" 
                                                      alt="${project.title}" 
                                                      class="w-full h-full object-cover" />
                                             </div>
@@ -439,7 +439,7 @@
                     testimonialsContainer.innerHTML = data.testimonials.map(testimonial => `
                         <div class="bg-secondary-dark p-6 rounded-xl border-t-4 border-accent shadow-lg">
                             <div class="flex items-center mb-4">
-                                <img src="${testimonial.avatar ? API_BASE + testimonial.avatar : 'https://placehold.co/50x50/333/fff?text=C'}" 
+                                <img src="${testimonial.avatar ? 'https://portfolio-backend-8xqk.onrender.com' + testimonial.avatar : 'https://placehold.co/50x50/333/fff?text=C'}" 
                                      alt="${testimonial.name}" 
                                      class="rounded-full mr-3 w-12 h-12 object-cover">
                                 <div>
